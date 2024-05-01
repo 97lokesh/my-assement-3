@@ -1,0 +1,249 @@
+
+                      The below programs in anonymous function & IIFE
+
+
+a.Print odd numbers in an array
+
+
+let a = [8,7,5,3,4,2,6,10]
+let oddNumbers=((array)=>{
+    let odd=[]
+    for(let i of array)
+    {
+        if(i%2!==0)
+        odd.push(i)
+
+    }
+    return odd
+
+})(a);
+
+
+console.log(oddNumbers)
+   
+
+
+b.Convert all the strings to title caps in a string array
+
+
+let name = "saranya"
+let arr = [];
+
+( function toTitleCase(str) {
+    return str.replace(/\w\S*/g,
+        function (txt) {
+            return arr.push ( txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase() )
+        }
+      
+    );
+      
+})(name)
+console.log(arr)
+
+c.Sum of all numbers in an array
+
+
+var arr = [1, 2, 3, 4]
+var total = 0;
+(function myfunc(a) {
+    for (var i = 0; i < arr.length; i++) {
+        total += arr[i];
+    }
+    console.log(total)
+})(arr);
+
+d.Return all the prime numbers in an array
+
+var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+let myfunc = (function (arr) {
+    numArray = numArray.filter((number) => {
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false;
+        }
+        return true;
+    });
+    console.log(numArray);
+})(numArray)
+
+
+e.Return all the palindromes in an array
+
+let array = ["1221", "hello", "123321"]
+let arr = [];
+let reverse = function (str) {
+    return str.split("").reverse().join("")
+}
+for (var i = 0; i < array.length; i++) {
+    var reversedarray = reverse(array[i])
+    if (array[i] == reversedarray) {
+        arr.push(array[i])
+    }
+}
+console.log(arr)
+
+
+f.Return median of two sorted arrays of the same size.
+
+
+ANONYMOUS FUNCTION;
+let arr1 =[1,2,3,4]
+let arr2 =[5,6,7,8]
+let arr3 =[...arr1,...arr2]
+
+
+ let myfunc = function(){
+    if(arr3.length%2===0){
+      return console.log((arr3[(arr3.length/2)-1]+arr3[(arr3.length/2)])/2)
+    }
+    else{
+      return  console.log(arr3[Math.round((arr3.length/2)-1)])
+    }
+}
+let result =(myfunc(arr3))
+
+
+g.Remove duplicates from an array
+
+const arr =[1,2,3,4,5,1,2,3]
+
+
+let myfunc =function(arr){
+    return [ ...new Set(arr)]
+}
+
+console.log(myfunc(arr))
+
+h.Rotate an array by k time
+
+let nums =[1,2,3,4,5]
+
+const rotateArray1 = function(nums, k) {
+
+  for (let i = 0; i < k; i++) {
+      nums.unshift(nums.pop());
+  }
+
+  return nums;
+}
+
+console.log(rotateArray1(nums,3))
+
+
+                                    The below programs in arrow functions
+
+ a.Print odd numbers in an array
+
+const arr = [1, 2, 4, 9, 12, 13, 20];
+const oddNumbers = [];
+arr.forEach((num) => num % 2 === 1 && oddNumbers.push(num));
+console.log(oddNumbers); // Output: [1, 9, 13]
+
+b.Convert all the strings to title caps in a string array
+
+function titleCase(str){
+    return str.toLowerCase().replace(/\b(\w)/g,s=>s.toUpperCase());
+}
+  
+
+console.log([titleCase("hi amar!")]);
+console.log([titleCase("how are you?")]);
+//output:
+[ 'Hi Amar!' ]
+[ 'How Are You?' ]
+
+c.Sum of all numbers in an array
+
+function calculateSum(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+    
+    console.log(calculateSum([1, 2, 3, 4]));
+
+
+d.Return all the prime numbers in an array
+
+
+const isPrime = num => {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+    }
+    return num !== 1;
+};
+
+// Filter the array to get prime numbers
+const myPrimeArray = newArray.filter(isPrime);
+
+console.log(myPrimeArray);
+
+e.Return all the palindromes in an array
+
+
+onst getAllPalindromes = (words) => {
+    return words.filter((word) => {
+        return word.split("").reverse().join("") === word;
+    });
+};
+
+console.log(getAllPalindromes(["hello", "noon"]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
